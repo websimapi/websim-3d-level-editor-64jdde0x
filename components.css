@@ -1,0 +1,641 @@
+.asset-item {
+  padding: 10px;
+  background: #444;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  word-break: break-word;
+  position: relative;
+  padding-right: 30px;
+}
+
+.asset-item.selected-asset {
+  background-color: #666;
+}
+
+.asset-preview {
+  display: none;
+  width: 100%;
+  height: 200px;
+  background: #222;
+  margin-top: 10px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.asset-item.expanded .asset-preview {
+  display: block;
+}
+
+.asset-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.rotation-ui {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 5px;
+}
+
+.rotation-button {
+  width: 24px;
+  height: 24px;
+  background: #444;
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.rotation-button:hover {
+  background: #555;
+}
+
+.arrow-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  transform-origin: center;
+}
+
+#action-history {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#action-history div {
+  padding: 5px;
+  background: #333;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.delete-asset-btn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: #ff4444;
+  border: none;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  padding: 0;
+}
+
+.delete-asset-btn:hover {
+  background: #ff0000;
+}
+
+.asset-name {
+  flex: 1;
+  padding-right: 10px;
+}
+
+.asset-type-select {
+  margin: 5px 0;
+  padding: 4px;
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.asset-type-select:focus {
+  outline: none;
+  border-color: #888;
+}
+
+.asset-type-select option {
+  background: #333;
+  color: white;
+}
+
+.block-settings {
+  padding: 10px;
+  background: #444;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.block-settings input[type="color"] {
+  width: 100%;
+  height: 40px;
+  margin: 5px 0;
+}
+
+.block-item {
+  padding: 10px;
+  background: #444;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.block-item.selected-block {
+  background-color: #666;
+  border-left: 4px solid #88f;
+}
+
+.block-item.selected-block:not(:last-child) {
+  margin-bottom: 2px;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px;
+  background: #444;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+.user-item img {
+  border-radius: 50%;
+}
+
+.block-outline {
+  position: absolute;
+  border: 2px solid #0088ff; 
+  pointer-events: none;
+  box-sizing: border-box;
+  width: 100px;
+  height: 50px;
+  transition: all 0.2s ease;
+}
+
+.rotation-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.rotation-axis {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+}
+
+.rotation-axis input[type="number"] {
+  width: 60px;
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin-left: 5px;
+}
+
+.rotation-axis input[type="number"]::-webkit-inner-spin-button,
+.rotation-axis input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+  height: 20px;
+}
+
+.rotation-axis input[type="range"] {
+  flex: 1;
+  margin: 0 5px;
+}
+
+.default-rotation-controls {
+  margin-top: 10px;
+  padding: 8px;
+  background: #333;
+  border-radius: 4px;
+}
+
+.rotation-label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #ccc;
+}
+
+.fill-settings {
+  margin-top: 10px;
+  padding: 10px;
+  background: #333;
+  border-radius: 4px;
+}
+
+.fill-settings label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#fill-controls {
+  margin-top: 10px;
+}
+
+.fill-dimension {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.fill-dimension input {
+  width: 60px;
+  padding: 4px;
+  background: #444;
+  border: 1px solid #555;
+  color: white;
+  border-radius: 4px;
+}
+
+.fill-dimension label {
+  font-size: 12px;
+}
+
+.fill-preview {
+  margin-top: 10px;
+  padding: 6px;
+  background: #444;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.preview-dimensions {
+  color: #aaa;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.position-preview {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.scale-controls {
+  margin-top: 20px;
+  padding: 8px;
+  background: #333;
+  border-radius: 4px;
+}
+
+.scale-label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #ccc;
+}
+
+.block-settings select {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.use-asset-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.use-asset-btn:hover {
+  background: #45a049;
+}
+
+.texture-item {
+    background: #444;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.texture-preview {
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.texture-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.apply-texture-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.remove-texture-btn {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.remove-texture-btn:hover {
+    background: #da190b;
+}
+
+.remove-texture-btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.generate-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.generate-btn:hover {
+  background: #45a049;
+}
+
+.cancel-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #da190b;
+}
+
+#ground-settings p {
+    font-size: 12px;
+    color: #ccc;
+    margin: 5px 0 10px;
+}
+
+#ground-selection-info {
+    padding: 8px;
+    background: #444;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #ddd;
+    min-height: 1em;
+}
+
+.lighting-settings {
+  padding: 10px;
+  background: #444;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.lighting-control {
+  margin-bottom: 15px;
+}
+
+.lighting-control label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #ddd;
+}
+
+.lighting-control input[type="range"] {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.lighting-control select {
+  width: 100%;
+  padding: 4px;
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 4px;
+}
+
+.lighting-control span {
+  font-size: 11px;
+  color: #aaa;
+}
+
+.light-position-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.axis-control {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.axis-control span:first-child {
+  width: 15px;
+  font-size: 11px;
+}
+
+.axis-control input[type="range"] {
+  flex: 1;
+  margin: 0;
+}
+
+.axis-control span:last-child {
+  width: 25px;
+  text-align: right;
+  font-size: 11px;
+}
+
+#light-x, #light-z {
+  min: -50;
+  max: 50;
+}
+
+#light-y {
+  min: 5;
+  max: 80;
+}
+
+#background-settings {
+  padding: 10px;
+  background: #444;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+#background-settings p {
+  font-size: 12px;
+  color: #ccc;
+  margin: 5px 0 10px;
+}
+
+#current-background-info {
+  padding: 8px;
+  background: #333;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #ddd;
+  min-height: 1em;
+}
+
+.world-settings {
+  padding: 10px;
+  background: #444;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.world-settings p {
+  font-size: 12px;
+  color: #ccc;
+  margin: 5px 0 10px;
+}
+
+.world-dimension {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.world-dimension label {
+  font-size: 12px;
+  color: #ddd;
+}
+
+.world-dimension input {
+  width: 80px;
+  padding: 4px;
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 4px;
+}
+
+.world-size-info {
+  margin: 10px 0;
+  padding: 8px;
+  background: #333;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #ddd;
+  text-align: center;
+}
+
+.world-size-warning {
+  margin: 10px 0;
+  padding: 8px;
+  background: #553300;
+  border: 1px solid #aa6600;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #ffcc66;
+}
+
+.icon-group { display:flex; gap:6px; margin:6px 0; }
+.icon-toggle { width:36px; height:36px; background:#444; border:1px solid #555; border-radius:4px; color:#fff; cursor:pointer; }
+.icon-toggle:hover { background:#555; }
+.icon-toggle.active { background:#666; border-color:#88f; }
+
+.mobile-inputs {
+  padding: 10px;
+  background: #444;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.mobile-inputs .tool-button {
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+  font-size: 12px;
+}
+
+.mobile-inputs .tool-button:disabled {
+  background: #666;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+#mobile-selection-rect {
+  border: 2px dashed #00ff00;
+  background: rgba(0, 255, 0, 0.1);
+  pointer-events: none;
+}
+
+.mobile-setting {
+  margin-bottom: 10px;
+}
+
+.mobile-setting label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ddd;
+  font-size: 12px;
+}
+
+.mobile-info {
+  margin-top: 15px;
+  padding: 8px;
+  background: #333;
+  border-radius: 4px;
+}
+
+.mobile-info p {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ddd;
+}
+
+.mobile-info ul {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 11px;
+  color: #ccc;
+}
+
+.mobile-info li {
+  margin-bottom: 4px;
+}

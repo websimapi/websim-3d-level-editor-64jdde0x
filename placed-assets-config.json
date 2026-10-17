@@ -1,0 +1,57 @@
+{
+  "gizmo": {
+    "arrow": {
+      "coneRadius": 0.15,
+      "coneHeight": 0.6,
+      "coneSegments": 8
+    },
+    "cylinder": {
+      "radiusTop": 0.08,
+      "radiusBottom": 0.08,
+      "height": 1.8,
+      "radialSegments": 8
+    },
+    "offset": {
+      "arrowDistance": 2.2,
+      "cylinderDistance": 1.1
+    },
+    "renderOrder": 999,
+    "materials": {
+      "xColor": 16711680,
+      "yColor": 65280,
+      "zColor": 255,
+      "transparent": false
+    },
+    "materialDepth": {
+      "depthTest": false,
+      "depthWrite": false
+    },
+    "sensitivity": 1.0,
+    "cursor": {
+      "hover": "grab",
+      "drag": "grabbing",
+      "default": "default"
+    },
+    "dragThresholdMs": 150
+  },
+  "rotationUI": {
+    "positionSliderRange": 5,
+    "positionStep": 0.01,
+    "rotation": {
+      "min": 0,
+      "max": 360,
+      "step": 1
+    },
+    "scale": {
+      "min": 0.1,
+      "max": 5,
+      "step": 0.1,
+      "default": 1
+    },
+    "presetAngles": [0, 45, 90, 135, 180, 225, 270, 315]
+  },
+  "deletion": {
+    "useHistory": true
+  }
+}
+

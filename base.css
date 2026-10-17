@@ -1,0 +1,29 @@
+body { 
+  margin: 0; 
+  background: #1a1a1a; 
+  color: #fff;
+  font-family: Arial, sans-serif;
+  /* Prevent touch scrolling and zooming on mobile */
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+#editor-container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  /* Prevent touch scrolling */
+  touch-action: none;
+}
+
+#grid-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  /* Prevent touch scrolling and enable touch interaction */
+  touch-action: none;
+}
